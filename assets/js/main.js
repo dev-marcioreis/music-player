@@ -1,14 +1,17 @@
 const wrapper = document.querySelector('.wrapper')
-let musicImg = wrapper.querySelector('.box__image img')
-let musicName = wrapper.querySelector('.song__details .music__name')
-let musicArtist = wrapper.querySelector('.song__details .artist__name')
-let mainAudio = wrapper.querySelector('#audio')
-let playPouseBtn = wrapper.querySelector('.play__pause')
-let prevBtn = wrapper.querySelector('#prev-song')
-let nextBtn = wrapper.querySelector('#next-song')
-let progressBarContent = wrapper.querySelector('.progress__content')
-let progressBar = wrapper.querySelector('.progress__bar')
+const musicImg = wrapper.querySelector('.box__image img')
+const musicName = wrapper.querySelector('.song__details .music__name')
+const musicArtist = wrapper.querySelector('.song__details .artist__name')
+const mainAudio = wrapper.querySelector('#audio')
+const playPouseBtn = wrapper.querySelector('.play__pause')
+const prevBtn = wrapper.querySelector('#prev-song')
+const nextBtn = wrapper.querySelector('#next-song')
+const progressBarContent = wrapper.querySelector('.progress__content')
+const progressBar = wrapper.querySelector('.progress__bar')
 const repeatBtn = wrapper.querySelector('#repeat__song')
+const musicList = wrapper.querySelector('.music__list')
+const show = wrapper.querySelector('#more-songs')
+const hide = musicList.querySelector('#close')
 
 
 let musicIndex = 1
@@ -162,4 +165,13 @@ mainAudio.addEventListener('ended', () => {
             playMusic()
             break;     
     }
+})
+
+
+show.addEventListener('click', () => {
+    musicList.classList.toggle('show')
+})
+
+hide.addEventListener('click', () => {
+    show.click()
 })
