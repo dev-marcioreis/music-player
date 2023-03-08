@@ -138,7 +138,7 @@ body {
 }
 .progress__content .progress__bar {
     position: relative;
-    width: 50%;
+    width: 0;
     height: inherit;
     border-radius: inherit;
     background: var(--blue-color);

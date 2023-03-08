@@ -8,6 +8,7 @@ let prevBtn = wrapper.querySelector('#prev-song')
 let nextBtn = wrapper.querySelector('#next-song')
 let progressBarContent = wrapper.querySelector('.progress__content')
 let progressBar = wrapper.querySelector('.progress__bar')
+const repeatBtn = wrapper.querySelector('#repeat__song')
 
 
 let musicIndex = 1
@@ -16,6 +17,7 @@ window.addEventListener('load', () => {
     loadMusic(musicIndex)
 })
 
+
 function loadMusic(indexNumb) {
     musicName.innerText = allMusic[indexNumb - 1].song
     musicArtist.innerText = allMusic[indexNumb - 1].artist
@@ -23,17 +25,20 @@ function loadMusic(indexNumb) {
     mainAudio.src = `assets/songs/${allMusic[indexNumb - 1].src}.mp3`
 }
 
+
 function playMusic() {
     wrapper.classList.add('paused')
     playPouseBtn.querySelector('i').innerText = 'paused'
     mainAudio.play()
 }
 
+
 function pauseMusic() {
     wrapper.classList.remove('paused')
     playPouseBtn.querySelector('i').innerText = 'play_arrow'
     mainAudio.pause()
 }
+
 
 function nextMusic() {
     musicIndex++
@@ -42,6 +47,7 @@ function nextMusic() {
     playMusic()
 }
 
+
 function prevMusic() {
     musicIndex--
     musicIndex < 1 ? musicIndex = allMusic.length : musicIndex = musicIndex
@@ -49,19 +55,23 @@ function prevMusic() {
     playMusic()
 }
 
+
 playPouseBtn.addEventListener('click', () => {
     const isMusicPaused = wrapper.classList.contains('paused')
 
     isMusicPaused ? pauseMusic() : playMusic()
 })
 
+
 nextBtn.addEventListener('click', () => {
     nextMusic()
 })
 
+
 prevBtn.addEventListener('click', () => {
     prevMusic()
 })
+
 
 mainAudio.addEventListener('timeupdate', e => {
     const currentTime = e.target.currentTime
@@ -106,4 +116,50 @@ progressBarContent.addEventListener('click', e => {
 
     mainAudio.currentTime = (clickedOffSetX / progressWidthValue) * songDuration
     playMusic()
+})
+
+
+repeatBtn.addEventListener('click',  () => {
+    let getText = repeatBtn.innerText;
+
+    switch(getText) {
+        case "repeat":
+            repeatBtn.innerText = 'repeat_one';
+            repeatBtn.setAttribute('title', 'Repetir...')
+            break;
+        case "repeat_one":
+            repeatBtn.innerText = 'shuffle';
+            repeatBtn.setAttribute('title', 'Aleatório...')
+            break;   
+        case "shuffle":
+            repeatBtn.innerText = 'repeat';
+            repeatBtn.setAttribute('title', 'Tocando...')
+            break;  
+    }
+})
+
+
+mainAudio.addEventListener('ended', () => {
+    let getText = repeatBtn.innerText;
+
+    switch(getText) {
+        case "repeat":
+            nextMusic()
+            break;
+        case "repeat_one":
+            mainAudio.currentTime = 0
+            loadMusic(musicIndex)
+            playMusic()
+            break;   
+        case "shuffle":
+            let randIndex = Math.floor((Math.random() * allMusic.length) + 1);
+            do (
+                randIndex = Math.floor((Math.random() * allMusic.length) + 1)
+            ); 
+            while(musicIndex === randIndex);
+            musicIndex = randIndex;
+            loadMusic(musicIndex)
+            playMusic()
+            break;     
+    }
 })
