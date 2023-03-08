@@ -4,6 +4,8 @@ let musicName = wrapper.querySelector('.song__details .music__name')
 let musicArtist = wrapper.querySelector('.song__details .artist__name')
 let mainAudio = wrapper.querySelector('#audio')
 let playPouseBtn = wrapper.querySelector('.play__pause')
+let prevBtn = wrapper.querySelector('#prev-song')
+let nextBtn = wrapper.querySelector('#next-song')
 
 
 let musicIndex = 1
@@ -31,8 +33,30 @@ function pauseMusic() {
     mainAudio.pause()
 }
 
+function nextMusic() {
+    musicIndex++
+    musicIndex > allMusic.length ? musicIndex = 1 : musicIndex = musicIndex
+    loadMusic(musicIndex)
+    playMusic()
+}
+
+function prevMusic() {
+    musicIndex--
+    musicIndex < 1 ? musicIndex = allMusic.length : musicIndex = musicIndex
+    loadMusic(musicIndex)
+    playMusic()
+}
+
 playPouseBtn.addEventListener('click', () => {
     const isMusicPaused = wrapper.classList.contains('paused')
 
     isMusicPaused ? pauseMusic() : playMusic()
+})
+
+nextBtn.addEventListener('click', () => {
+    nextMusic()
+})
+
+prevBtn.addEventListener('click', () => {
+    prevMusic()
 })
