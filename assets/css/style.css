@@ -23,10 +23,18 @@
     --dark-color: hsl(0, 0%, 13%);
     --white-color: hsl(0, 0%, 100%);
     --transparent-color: hsla(0, 0%, 0%, 0);
-    --text-color: hsla(0, 0%, 13%, 0.384);
+    --text-color: hsl(0, 1%, 74%);
     --transition: all 400ms ease;
     --shadow: 0 1px 4px hsla(0, 0%, 0%, 0.2);
     --shadow-1: 0px 1px 3px hsla(0, 0%, 0%, 0.5);
     --shadow-2: 0px 3px 6px hsla(0, 0%, 0%, 0.4);
 
 }
+
+/*==========Base==========*/
+body {
+    background: var(--dark-color);
+    color: var(--text-color);
+}
+
+/*==========player==========*/
