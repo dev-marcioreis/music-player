@@ -167,7 +167,6 @@ body {
 }
 .song__duration .current {
     font-weight: 200;
-    letter-spacing: 3px;
 }
 .player__controls {
     display: flex;
