@@ -17,17 +17,12 @@
 :root {
 
     --red-color: hsl(349, 98%, 58%);
-    --salmon-color: hsl(11, 77%, 66%);
-    --green-color: hsl(168, 11%, 56%);
     --blue-color: hsl(202, 74%, 52%);
-    --dark-color: hsl(0, 0%, 13%);
+    --dark-color: hsla(0, 0%, 13%, 0.884);
+    --text-color: hsl(0, 0%, 94%);
     --white-color: hsl(0, 0%, 100%);
-    --transparent-color: hsla(0, 0%, 0%, 0);
-    --text-color: hsl(0, 1%, 74%);
-    --transition: all 400ms ease;
     --shadow: 0 1px 4px hsla(0, 0%, 0%, 0.2);
     --shadow-1: 0px 1px 3px hsla(0, 0%, 0%, 0.5);
-    --shadow-2: 0px 3px 6px hsla(0, 0%, 0%, 0.4);
 
 }
 
@@ -38,3 +33,154 @@ body {
 }
 
 /*==========player==========*/
+.player__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100svh;
+}
+.wrapper {
+    width: 355px;
+    background: var(--red-color);
+    box-shadow: var(--shadow-1);
+    border-radius: .5rem;
+    padding: 1rem;
+}
+.wrapper i {
+    cursor: pointer;
+}
+.top__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: 2rem;
+}
+.top__bar i {
+    font-size: 1.7rem;
+    color: var(--white-color);
+}
+.top__bar .listening {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+.top__bar .listening i {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+.box__image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    text-align: center;
+}
+.box__image img {
+    object-fit: contain;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-1);
+    border: 5px solid var(--blue-color);
+}
+.song__details {
+    text-align: center;
+    margin: .8rem 0;
+}
+.song__details .music__name {
+    font-weight: 200;
+    margin-block-end: .4rem;
+}
+.song__details .music__name i {
+    font-size: 1rem;
+    color: var(--dark-color);
+}
+.song__details .artist__name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--white-color);
+}
+.song__details .artist__name i {
+    font-size: 1rem;
+    color: var(--dark-color);
+}
+.progress__content {
+    width: 100%;
+    height: .4rem;
+    background: var(--dark-color);
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-block-start: 2rem;
+    margin-block-end: 3rem;
+}
+.progress__content .progress__bar {
+    position: relative;
+    width: 50%;
+    height: inherit;
+    border-radius: inherit;
+    background: var(--blue-color);
+}
+.progress__bar::before {
+    content: '';
+    position: absolute;
+    width: .8rem;
+    height: .8rem;
+    background: var(--blue-color);
+    border-radius: inherit;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+.progress__content:hover .progress__bar::before {
+    opacity: 1;
+}
+.progress__bar, .song__duration {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-start: .3rem;
+}
+.song__duration .current {
+    font-weight: 200;
+    letter-spacing: 3px;
+}
+.player__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem;
+}
+.player__controls i {
+    font-size: 1.4rem;
+    color: var(--dark-color);
+    user-select: none;
+    padding: 0;
+}
+.player__controls i:nth-child(2), .player__controls i:nth-child(4) {
+    font-size: 2rem;
+    color: var(--white-color);
+}
+.player__controls .play__pause {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--dark-color);
+    box-shadow: var(--shadow-1);
+    border-radius: 50%;
+}
+.player__controls .play__pause i {
+    padding: .3rem;
+    border-radius: inherit;
+    background: var(--red-color);
+    box-shadow: var(--shadow-1);
+    color: var(--white-color);
+}
+.play__pause #pouse {
+    display: none;
+}
