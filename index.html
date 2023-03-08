@@ -9,6 +9,7 @@
     <meta name="keywords" contente="Portfolio, html, css, front-end, JavaScript, Desenvolvimento, React, React Native, Angular, NodeJS, Vue, Android, IOS, HTTP, SEO, Scrum, Bootstrap, Git, GitHub, Tailwind, Regex, QA, Php, TypeScript">
     <!--========Icon========-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--========CSS========-->
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -38,11 +39,11 @@
                 <i class="uil uil-ellipsis-h"></i>
             </div>
             <div class="box__image">
-                <img src="assets/images/artist/tim-maia.jpg" alt="Tim Maia">
+                <img src="" alt="Tim Maia">
             </div>
             <div class="song__details">
-                <p class="music__name"><i class="uil uil-volume"></i> Gostava tanto de você</p>
-                <p class="artist__name"><i class="uil uil-microphone"></i>Tim Maia</p>
+                <p class="music__name"></p>
+                <p class="artist__name"></p>
             </div>
             <div class="progress__content">
                 <div class="progress__bar"></div>
@@ -50,13 +51,13 @@
                     <span class="current">0:10</span>
                     <span class="current">2:10</span>
                 </div>
+                <audio src="" id="audio"></audio>
             </div>
             <div class="player__controls">
                 <i class="uil uil-process" id="repeat-song"></i>
                 <i class="uil uil-previous" id="prev-song"></i>
                 <div class="play__pause">
-                    <i class="uil uil-play" id="play"></i>
-                    <i class="uil uil-pause-circle" id="pouse"></i>
+                    <i class="material-icons">play_arrow</i>
                 </div>
                 <i class="uil uil-step-forward" id="next-song"></i>
                 <i class="uil uil-headphones-alt" id="more-songs"></i>
@@ -72,35 +73,35 @@
                 <ul class="list">
                     <li class="list__item">
                         <div class="row">
-                            <p class="song"><i class="uil uil-volume"></i> Gostava tanto de você</p>
+                            <p class="song"><i class="uil uil-volume"></i> Azul da cor do mar</p>
                             <p class="artist"><i class="uil uil-microphone"></i>Tim Maia</p>
                         </div>
                         <span class="duration">3:20</span>
                     </li>
                     <li class="list__item">
                         <div class="row">
-                            <p class="song"><i class="uil uil-volume"></i> Gostava tanto de você</p>
+                            <p class="song"><i class="uil uil-volume"></i> Azul da cor do mar</p>
                             <p class="artist"><i class="uil uil-microphone"></i>Tim Maia</p>
                         </div>
                         <span class="duration">3:20</span>
                     </li>
                     <li class="list__item">
                         <div class="row">
-                            <p class="song"><i class="uil uil-volume"></i> Gostava tanto de você</p>
+                            <p class="song"><i class="uil uil-volume"></i> Azul da cor do mar</p>
                             <p class="artist"><i class="uil uil-microphone"></i>Tim Maia</p>
                         </div>
                         <span class="duration">3:20</span>
                     </li>
                     <li class="list__item">
                         <div class="row">
-                            <p class="song"><i class="uil uil-volume"></i> Gostava tanto de você</p>
+                            <p class="song"><i class="uil uil-volume"></i> Azul da cor do mar</p>
                             <p class="artist"><i class="uil uil-microphone"></i>Tim Maia</p>
                         </div>
                         <span class="duration">3:20</span>
                     </li>
                     <li class="list__item">
                         <div class="row">
-                            <p class="song"><i class="uil uil-volume"></i> Gostava tanto de você</p>
+                            <p class="song"><i class="uil uil-volume"></i> Azul da cor do mar</p>
                             <p class="artist"><i class="uil uil-microphone"></i>Tim Maia</p>
                         </div>
                         <span class="duration">3:20</span>
@@ -110,5 +111,8 @@
         </div>
     </article>
 
+
+    <!--========JavaScript========-->
+    <script src="assets/js/music-list.js" defer></script>
 </body>
 </html>

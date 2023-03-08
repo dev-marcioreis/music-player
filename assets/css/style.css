@@ -69,7 +69,7 @@ body {
 }
 .wrapper {
     position: relative;
-    width: 355px;
+    width: 345px;
     background: var(--red-color);
     box-shadow: var(--shadow);
     border-radius: .5rem;
@@ -106,7 +106,7 @@ body {
     text-align: center;
 }
 .box__image img {
-    object-fit: contain;
+    object-fit: cover;
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -121,19 +121,11 @@ body {
     font-weight: 200;
     margin-block-end: .4rem;
 }
-.song__details .music__name i {
-    font-size: 1rem;
-    color: var(--dark-color);
-}
 .song__details .artist__name {
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--white-color);
-}
-.song__details .artist__name i {
-    font-size: 1rem;
-    color: var(--dark-color);
 }
 .progress__content {
     width: 100%;
@@ -194,24 +186,14 @@ body {
     color: var(--white-color);
 }
 .player__controls .play__pause {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    background: var(--red-color);
-    box-shadow: var(--shadow);
-    border-radius: 50%;
-    border: 4px solid var(--dark-color);
+    width: 2.2rem;
 }
 .player__controls .play__pause i {
+    width: 2.2rem;
+    height: 2.2rem;
     color: var(--white-color);
-    font-size: 1.6rem;
-    margin-left: .1rem;
+    font-size: 2.2rem;
     cursor: pointer;
-}
-.play__pause #pouse {
-    display: none;
 }
 .music__list {
     position: absolute;
