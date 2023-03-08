@@ -6,6 +6,7 @@ let mainAudio = wrapper.querySelector('#audio')
 let playPouseBtn = wrapper.querySelector('.play__pause')
 let prevBtn = wrapper.querySelector('#prev-song')
 let nextBtn = wrapper.querySelector('#next-song')
+let progressBarContent = wrapper.querySelector('.progress__content')
 let progressBar = wrapper.querySelector('.progress__bar')
 
 
@@ -97,3 +98,12 @@ mainAudio.addEventListener('timeupdate', e => {
 
 })
 
+
+progressBarContent.addEventListener('click', e => {
+    let progressWidthValue = progressBarContent.clientWidth
+    let clickedOffSetX = e.offsetX
+    let songDuration = mainAudio.duration
+
+    mainAudio.currentTime = (clickedOffSetX / progressWidthValue) * songDuration
+    playMusic()
+})
