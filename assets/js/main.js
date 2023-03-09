@@ -10,8 +10,7 @@ const progressBarContent = wrapper.querySelector('.progress__content')
 const progressBar = wrapper.querySelector('.progress__bar')
 const repeatBtn = wrapper.querySelector('#repeat__song')
 const musicList = wrapper.querySelector('.music__list')
-const show = wrapper.querySelector('#more-songs')
-const hide = musicList.querySelector('#close')
+
 
 
 let musicIndex = 1
@@ -28,21 +27,21 @@ function loadMusic(indexNumb) {
     mainAudio.src = `assets/songs/${allMusic[indexNumb - 1].src}.mp3`
 }
 
-
+// Função para reproduzir a música
 function playMusic() {
     wrapper.classList.add('paused')
     playPouseBtn.querySelector('i').innerText = 'paused'
     mainAudio.play()
 }
 
-
+// Função para pausar a música
 function pauseMusic() {
     wrapper.classList.remove('paused')
     playPouseBtn.querySelector('i').innerText = 'play_arrow'
     mainAudio.pause()
 }
 
-
+// Função para passar para a próxima música
 function nextMusic() {
     musicIndex++
     musicIndex > allMusic.length ? musicIndex = 1 : musicIndex = musicIndex
@@ -50,7 +49,7 @@ function nextMusic() {
     playMusic()
 }
 
-
+// Função para voltar para música anterior
 function prevMusic() {
     musicIndex--
     musicIndex < 1 ? musicIndex = allMusic.length : musicIndex = musicIndex
@@ -58,24 +57,24 @@ function prevMusic() {
     playMusic()
 }
 
-
+// Evento de play ou pause
 playPouseBtn.addEventListener('click', () => {
     const isMusicPaused = wrapper.classList.contains('paused')
 
     isMusicPaused ? pauseMusic() : playMusic()
 })
 
-
+// Evento de passar a música
 nextBtn.addEventListener('click', () => {
     nextMusic()
 })
 
-
+// Evento de voltar a música
 prevBtn.addEventListener('click', () => {
     prevMusic()
 })
 
-
+// Atualize a barra de progresso de acordo com a música atua
 mainAudio.addEventListener('timeupdate', e => {
     const currentTime = e.target.currentTime
     const duration = e.target.duration
@@ -87,6 +86,8 @@ mainAudio.addEventListener('timeupdate', e => {
     let musicCurrentTime = wrapper.querySelector('.current')
     let musicDurationTime = wrapper.querySelector('.current__duration')
 
+    
+   // Atualize a reprodução da hora atual da música
     mainAudio.addEventListener('loadeddata', () => {
 
         let audioDuration = mainAudio.duration
@@ -111,7 +112,7 @@ mainAudio.addEventListener('timeupdate', e => {
 
 })
 
-
+// Atualize a reprodução da hora atual da música
 progressBarContent.addEventListener('click', e => {
     let progressWidthValue = progressBarContent.clientWidth
     let clickedOffSetX = e.offsetX
@@ -121,7 +122,7 @@ progressBarContent.addEventListener('click', e => {
     playMusic()
 })
 
-
+// Alterar loop, embaralhar, repetir ícone ao clicar
 repeatBtn.addEventListener('click',  () => {
     let getText = repeatBtn.innerText;
 
@@ -141,7 +142,7 @@ repeatBtn.addEventListener('click',  () => {
     }
 })
 
-
+// Código para o que fazer depois que a música terminar
 mainAudio.addEventListener('ended', () => {
     let getText = repeatBtn.innerText;
 
@@ -168,10 +169,3 @@ mainAudio.addEventListener('ended', () => {
 })
 
 
-show.addEventListener('click', () => {
-    musicList.classList.toggle('show')
-})
-
-hide.addEventListener('click', () => {
-    show.click()
-})

@@ -1,4 +1,4 @@
-let allMusic = [
+const allMusic = [
     {
         song: 'Azul da cor do mar',
         artist: 'Tim Maia',
@@ -58,5 +58,6 @@ let allMusic = [
         artist: 'Bee Gees',
         image: 'bee-gees',
         src: 'stayin-alive'
-    }
-]
+    },
+];
+
