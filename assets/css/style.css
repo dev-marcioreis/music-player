@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /*==========Reset==========*/
-*, *::before, *::after {
+* {
     margin: 0;
     padding: 0;
     border: 0;
@@ -16,47 +16,19 @@
 /*==========Root==========*/
 :root {
 
-    --red-color: hsl(349, 98%, 58%);
+    --bg-color: hsl(233, 23%, 85%);
     --blue-color: hsl(202, 74%, 52%);
     --dark-color: hsla(0, 0%, 13%, 0.884);
-    --text-color: hsl(0, 0%, 94%);
     --white-color: hsl(0, 0%, 100%);
     --shadow: 0px 1px 3px hsla(0, 0%, 0%, 0.5);
-    --transition: all 400ms ease;
+    --shadow1: 5px 5px 5px hsla(0, 0%, 0%, 0.1), 10px 10px 10px hsla(0, 0%, 0%, 0.1), 20px 20px 7px hsla(0, 0%, 0%, 0.075), 50px 50px 80px hsla(0, 0%, 0%, 0.25), inset 2px 2px 10px hsl(0, 0%, 100%);
 
 }
 
 /*==========Base==========*/
 body {
-    background: var(--dark-color);
-    color: var(--text-color);
-}
-
-/*==========Header==========*/
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.header .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
-}
-.header .logo img {
-    width: 1.5rem;
-}
-.header .logo span {
-    text-transform: capitalize;
-    font-weight: 200;
-    letter-spacing: 3px;
-    color: var(--white-color);
+    background: var(--bg-color);
+    color: var(--dark-color);
 }
 
 /*==========Player==========*/
@@ -69,10 +41,10 @@ body {
 }
 .wrapper {
     position: relative;
-    width: 335px;
-    background: var(--red-color);
-    box-shadow: var(--shadow);
-    border-radius: .5rem;
+    width: 320px;
+    background: var(--bg-color);
+    box-shadow: var(--shadow1);
+    border-radius: 1rem;
     padding: 1rem;
     overflow: hidden;
 }
@@ -82,44 +54,41 @@ body {
 .top__bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-block-end: 2rem;
-}
-.top__bar i {
-    font-size: 1.7rem;
-    color: var(--white-color);
+    justify-content: center;
+    margin-block-end: 1rem;
 }
 .top__bar .listening {
-    color: var(--text-color);
+    color: var(--white-color);
     font-size: 1.1rem;
-    font-weight: 200;
+    font-weight: 300;
     letter-spacing: 2px;
 }
 .top__bar .listening i {
     font-size: 1rem;
-    color: var(--text-color);
+    color: var(--white-color);
 }
 .box__image {
     width: 100%;
-    height: 200px;
+    height: 110px;
     overflow: hidden;
     text-align: center;
 }
 .box__image img {
     object-fit: cover;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     box-shadow: var(--shadow);
-    border: 5px solid var(--blue-color);
+    border: 2px solid var(--white-color);
 }
 .song__details {
     text-align: center;
     margin: .8rem 0;
 }
 .song__details .music__name {
-    font-weight: 200;
+    font-weight: 300;
     margin-block-end: .4rem;
+    color: var(--white-color);
 }
 .song__details .artist__name {
     font-size: 1.2rem;
@@ -130,7 +99,7 @@ body {
 .progress__content {
     width: 100%;
     height: .4rem;
-    background: hsla(202, 74%, 52%, 0.062);
+    background: hsla(202, 74%, 52%, 0.11);
     border-radius: 1rem;
     cursor: pointer;
     margin-block-start: 2rem;
@@ -142,22 +111,6 @@ body {
     height: inherit;
     border-radius: inherit;
     background: var(--blue-color);
-}
-.progress__bar::before {
-    content: '';
-    position: absolute;
-    width: .8rem;
-    height: .8rem;
-    background: var(--blue-color);
-    border-radius: inherit;
-    top: 50%;
-    right: -5px;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity .2s ease;
-}
-.progress__content:hover .progress__bar::before {
-    opacity: 1;
 }
 .progress__bar, .song__duration {
     display: flex;
@@ -176,13 +129,13 @@ body {
 }
 .player__controls i {
     font-size: 1.4rem;
-    color: var(--dark-color);
+    color: var(--white-color);
     user-select: none;
     padding: 0;
 }
 .player__controls i:nth-child(2), .player__controls i:nth-child(4) {
     font-size: 2rem;
-    color: var(--white-color);
+    color: var(--blue-color);
 }
 .player__controls .play__pause {
     width: 2.2rem;
@@ -190,30 +143,8 @@ body {
 .player__controls .play__pause i {
     width: 2.2rem;
     height: 2.2rem;
-    color: var(--white-color);
+    color: var(--blue-color);
     font-size: 2.2rem;
     cursor: pointer;
 }
 
-
-/*==========Footer==========*/
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 2rem;
-    width: 100%;
-}
-.footer__socials {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-}
-.footer__socials a {
-    color: var(--text-color);
-    font-weight: 100;
-    font-size: 1rem;
-}
-.footer__socials a i {
-    color: var(--blue-color);
-}
