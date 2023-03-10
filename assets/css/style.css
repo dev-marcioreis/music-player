@@ -101,7 +101,7 @@ body {
     height: .4rem;
     background: hsla(202, 74%, 52%, 0.11);
     border-radius: 1rem;
-    cursor: pointer;
+    cursor: default;
     margin-block-start: 2rem;
     margin-block-end: 3rem;
 }
@@ -125,25 +125,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: .5rem;
+    padding: 0;
 }
 .player__controls i {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: var(--white-color);
     user-select: none;
     padding: 0;
 }
 .player__controls i:nth-child(2), .player__controls i:nth-child(4) {
     font-size: 2rem;
-    color: var(--blue-color);
-}
-.player__controls .play__pause {
-    width: 2.2rem;
 }
 .player__controls .play__pause i {
-    width: 2.2rem;
-    height: 2.2rem;
-    color: var(--blue-color);
     font-size: 2.2rem;
     cursor: pointer;
 }

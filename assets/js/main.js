@@ -30,7 +30,7 @@ function loadMusic(indexNumb) {
 // Função para reproduzir a música
 function playMusic() {
     wrapper.classList.add('paused')
-    playPouseBtn.querySelector('i').innerText = 'paused'
+    playPouseBtn.querySelector('i').innerText = 'pause'
     mainAudio.play()
 }
 
