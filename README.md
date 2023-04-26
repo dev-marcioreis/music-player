@@ -7,7 +7,7 @@ O objetivo é o aperfeiçoamento em CSS e JavaScript.
 
 ## 🚀 Finalizado.
 
-## 📋 Técnologias
+## 📋 Tecnologias
 CSS + JavaScript
 
 ## ✒️ Autor
