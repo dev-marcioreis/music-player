@@ -3,7 +3,7 @@
 ---
 
 Este projeto é um player de músicas.<br>
-O objetivo é o aperfeiçoamento em CSS e JavaScript.
+O objetivo é o aperfeiçoamento de habilidades e conhecimentos em JavaScript.
 
 ## 🚀 Finalizado.
 
